@@ -6,11 +6,12 @@ on:
 
 jobs:
   build:
-    name: Assign based on label applied
     if: ${{ github.event.label.name = '🌎 amer-central' }}
     runs-on: unbuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Assign based on label applied
+      uses: actions/github@v1.0.0
       with:
-        assignees: selkins13
+        args: assign @selkins13
       
