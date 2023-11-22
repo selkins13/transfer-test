@@ -1,0 +1,17 @@
+name: 'Auto Assign with Label'
+
+on:
+  issues:
+    types: [ labeled ]
+
+jobs:
+  build:
+    if: ${{ github.event.label.name = '🌎 amer-central' }}
+    runs-on: unbuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        assignees: selkins13
+    - name: Assign based on label applied
+      
