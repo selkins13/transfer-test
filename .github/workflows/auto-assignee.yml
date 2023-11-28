@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: check-label
         if: github.event.label.name == '🌎 amer-central'
-        run: gh issue edit --add-assignee @selkins13
+        run: gh issue edit ${{ github.event.issue.number }} --add-assignee @selkins13
         env: 
           GH_TOKEN: ${{ github.token }}
     
