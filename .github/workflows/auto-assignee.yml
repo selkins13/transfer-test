@@ -13,4 +13,6 @@ jobs:
       - id: check-label
         if: github.event.label.name == '🌎 amer-central'
         run: gh issue edit --add-assignee @selkins13
+        env: 
+          GH_TOKEN: ${{ github.token }}
     
